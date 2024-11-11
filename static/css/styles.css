@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: 6px;
+}
+
+.header {
+    padding: 6px;
+    text-align: center;
+    background: #45338d;
+    color: white;
+    font-size: 20px;
+}
+
+.navbar, .sidebar a {
+    display: block;
+    text-align: center;
+    padding: 2px 2px;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This will spread out the nav links */
+    background-color: #333;
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    color: black;
+    padding: 16px;
+}
+
+.sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px);
+}
+
+#content {
+    margin-left: 250px;
+    padding: 1rem;
+    transition: margin-left 0.3s ease;
+    flex-grow: 1;
+}
+
+#content.hidden {
+    margin-left: 0;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 900px;
+}
+
+.info {
+    display: none;
+    position: absolute;
+    background: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.sidebar a:hover .info {
+    display: block;
+    left: 200px;
+    top: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    flex: .65;
+    overflow-y: auto;
+    height: 500px;
+    border: .5px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}

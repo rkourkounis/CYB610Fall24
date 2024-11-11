@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="header">
+  <h1>Data Breach Notifications</h1>
+  <p>Laws and Guidelines by States within the U.S.</p>
+</div>
+
+<div class="navbar">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('table') }}">Search</a>
+</div>
+
+<div class="sidebar">
+  <a href="{{ url_for('alabama') }}">Alabama<div class="info">Breaches, laws and guidelines in Alabama</div></a>
+  <a href="{{ url_for('alaska') }}">Alaska<div class="info">Breaches, laws and guidelines in Alaska</div></a>
+  <a href="{{ url_for('arizona') }}">Arizona<div class="info">Breaches, laws and guidelines in Arizona</div></a>
+  <a href="{{ url_for('arkansas') }}">Arkansas<div class="info">Breaches, laws and guidelines in Arkansas</div></a>
+  <a href="{{ url_for('california') }}">California<div class="info">Breaches, laws and guidelines in California</div></a>
+  <a href="{{ url_for('colorado') }}">Colorado<div class="info">Breaches, laws and guidelines in Colorado</div></a>
+  <a href="{{ url_for('connecticut') }}">Connecticut<div class="info">Breaches, laws and guidelines in Connecticut</div></a>
+  <a href="{{ url_for('delaware') }}">Delaware<div class="info">Breaches, laws and guidelines in Delaware</div></a>
+  <a href="{{ url_for('florida') }}">Florida<div class="info">Breaches, laws and guidelines in Florida</div></a>
+  <a href="{{ url_for('georgia') }}">Georgia<div class="info">Breaches, laws and guidelines in Georgia</div></a>
+  <a href="{{ url_for('hawaii') }} ">Hawaii<div class="info">Breaches, laws and guidelines in Hawaii</div></a>
+  <a href="{{ url_for('idaho') }}">Idaho<div class="info">Breaches, laws and guidelines in Idaho</div></a>
+  <a href="{{ url_for('illinois') }}">Illinois<div class="info">Breaches, laws and guidelines in Illinois</div></a>
+  <a href="{{ url_for('indiana') }}">Indiana<div class="info">Breaches, laws and guidelines in Indiana</div></a>
+  <a href="{{ url_for('iowa') }}">Iowa<div class="info">Breaches, laws and guidelines in Iowa</div></a>
+  <a href="{{ url_for('kansas') }}">Kansas<div class="info">Breaches, laws and guidelines in Kansas</div></a>
+  <a href="{{ url_for('kentucky') }}">Kentucky<div class="info">Breaches, laws and guidelines in Kentucky</div></a>
+  <a href="{{ url_for('louisiana') }}">Louisiana<div class="info">Breaches, laws and guidelines in Louisiana</div></a>
+  <a href="{{ url_for('maine') }}">Maine<div class="info">Breaches, laws and guidelines in Maine</div></a>
+  <a href="{{ url_for('maryland') }}">Maryland<div class="info">Breaches, laws and guidelines in Maryland</div></a>
+  <a href="{{ url_for('massachusetts') }}">Massachusetts<div class="info">Breaches, laws and guidelines in Massachusetts</div></a>
+  <a href="{{ url_for('michigan') }}">Michigan<div class="info">Breaches, laws and guidelines in Michigan</div></a>
+  <a href="{{ url_for('minnesota') }}">Minnesota<div class="info">Breaches, laws and guidelines in Minnesota</div></a>
+  <a href="{{ url_for('mississippi') }}">Mississippi<div class="info">Breaches, laws and guidelines in Mississippi</div></a>
+  <a href="{{ url_for('missouri') }}">Missouri<div class="info">Breaches, laws and guidelines in Missouri</div></a>
+  <a href="{{ url_for('montana') }}">Montana<div class="info">Breaches, laws and guidelines in Montana</div></a>
+  <a href="{{ url_for('nebraska') }}">Nebraska<div class="info">Breaches, laws and guidelines in Nebraska</div></a>
+  <a href="{{ url_for('nevada') }}">Nevada<div class="info">Breaches, laws and guidelines in Nevada</div></a>
+  <a href="{{ url_for('newhampshire') }}">New Hampshire<div class="info">Breaches, laws and guidelines in New Hampshire</div></a>
+  <a href="{{ url_for('newjersey') }}">New Jersey<div class="info">Breaches, laws and guidelines in New Jersey</div></a>
+  <a href="{{ url_for('newmexico') }}">New Mexico<div class="info">Breaches, laws and guidelines in New Mexico</div></a>
+  <a href="{{ url_for('newyork') }}">New York<div class="info">Breaches, laws and guidelines in New York</div></a>
+  <a href="{{ url_for('northcarolina') }}">North Carolina<div class="info">Breaches, laws and guidelines in North Carolina</div></a>
+  <a href="{{ url_for('northdakota') }}">North Dakota<div class="info">Breaches, laws and guidelines in North Dakota</div></a>
+  <a href="{{ url_for('ohio') }}">Ohio<div class="info">Breaches, laws and guidelines in Ohio</div></a>
+  <a href="{{ url_for('oklahoma') }}">Oklahoma<div class="info">Breaches, laws and guidelines in Oklahoma</div></a>
+  <a href="{{ url_for('oregon') }}">Oregon<div class="info">Breaches, laws and guidelines in Oregon</div></a>
+  <a href="{{ url_for('pennsylvania') }}">Pennsylvania<div class="info">Breaches, laws and guidelines in Pennsylvania</div></a>
+  <a href="{{ url_for('rhodeisland') }}">Rhode Island<div class="info">Breaches, laws and guidelines in Rhode Island</div></a>
+  <a href="{{ url_for('southcarolina') }}">South Carolina<div class="info">Breaches, laws and guidelines in South Carolina</div></a>
+  <a href="{{ url_for('southdakota') }}">South Dakota<div class="info">Breaches, laws and guidelines in South Dakota</div></a>
+  <a href="{{ url_for('tennessee') }}">Tennessee<div class="info">Breaches, laws and guidelines in Tennessee</div></a>
+  <a href="{{ url_for('texas') }}">Texas<div class="info">Breaches, laws and guidelines in Texas</div></a>
+  <a href="{{ url_for('utah') }}">Utah<div class="info">Breaches, laws and guidelines in Utah</div></a>
+  <a href="{{ url_for('vermont') }}">Vermont<div class="info">Breaches, laws and guidelines in Vermont</div></a>
+  <a href="{{ url_for('virginia') }}">Virginia<div class="info">Breaches, laws and guidelines in Virginia</div></a>
+  <a href="{{ url_for('washington') }}">Washington<div class="info">Breaches, laws and guidelines in Washington</div></a>
+  <a href="{{ url_for('westvirginia') }}">West Virginia<div class="info">Breaches, laws and guidelines in West Virginia</div></a>
+  <a href="{{ url_for('wisconsin') }}">Wisconsin<div class="info">Breaches, laws and guidelines in Wisconsin</div></a>
+  <a href="{{ url_for('wyoming') }}">Wyoming<div class="info">Breaches, laws and guidelines in Wyoming</div></a>
+  <a href="{{ url_for('dc') }}">D.C.<div class="info">Breaches, laws and guidelines in D.C.</div></a>
+</div>
+
+<div class="content">
+  <h2>Oklahoma</h2>
+  <p>Oklahoma’s data breach notification laws, outlined in the Security Breach Notification Act (Ok. Stat., Tit. 24, §§ 161–166), require businesses and organizations to notify affected individuals without unreasonable delay when their personal information is compromised. Notification can be done through written, electronic, or telephonic means. If more than 1,000 residents are affected, businesses must also notify the Oklahoma Attorney General. The notification must include details about the scope and severity of the breach, as well as the types of personal information disclosed. The law emphasizes prompt and transparent communication to mitigate the impact of data breaches.</p>
+  <ul>
+    <li><a href="https://oklahoma.gov/content/dam/ok/en/health/health2/documents/odh-303h-hipaa-privacy-complaint-form-and-instructions-7-2018.pdf">Report a breach</a></li>
+  </ul>
+</div>
+
+</body>
+</html>

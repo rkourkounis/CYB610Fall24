@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <title>U.S. Data Breaches</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    function loadBreaches(stateId) {
+        fetch(`/breaches/${stateId}`)
+            .then(response => response.json())
+            .then(breaches => {
+                const breachList = document.getElementById('breach-list');
+                breachList.innerHTML = ''; // Clear existing breaches
+
+                breaches.forEach(breach => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#" onclick="loadBreachDetails('${breach.id}')">${breach.name}</a>`;
+                    //li.innerHTML = `<a href="#" onclick="foo"</a>`;
+                    breachList.appendChild(li);
+                });
+            });
+    }
+
+    // Set up event listeners for each breach element
+    document.querySelectorAll('.breach').forEach(breach => {
+        breach.addEventListener('click', () => {
+            const breachId = breach.getAttribute('data-id');
+            loadBreachDetails(breachId);
+        });
+    });
+
+    // Function to load breach details
+    function loadBreachDetails(breachId) {
+        // Show the loading message
+        document.getElementById('loading-message').style.display = 'block';
+
+        // Fetch breach details from the server
+        fetch(`/breach-details/${breachId}`)
+            .then(response => response.json())
+            .then(details => {
+                // Hide the loading message
+                document.getElementById('loading-message').style.display = 'none';
+
+                // Display the breach details
+                const detailsDiv = document.getElementById('details');
+                detailsDiv.innerHTML = ''; // Clear previous details
+
+                if (details.error) {
+                    detailsDiv.innerHTML = 'Breach not found.';
+                } else {
+                    const p = document.createElement('p');
+                    p.innerHTML = details.details || "No details available for this breach.";
+                    detailsDiv.appendChild(p);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching breach details:', error);
+                const detailsDiv = document.getElementById('details');
+                detailsDiv.innerHTML = 'Failed to load breach details. Please try again later.';
+                document.getElementById('loading-message').style.display = 'none';
+            });
+    }
+</script>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Data Breach Notifications</h1>
+  <p>Laws and Guidelines by States within the U.S.</p>
+</div>
+
+<div class="navbar">
+  <a href="{{ url_for('index') }}">Home</a>
+</div>
+
+<div class="container">
+    <div class="column" id="states">
+        <h2>States</h2>
+        <ul>
+            {% for state in states %}
+                <li><a href="#" onclick="loadBreaches('{{ state.id }}')">{{ state.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="column" id="breaches">
+        <h2>Breaches</h2>
+        <ul id="breach-list">
+            <!-- Breaches will be dynamically added here when a state is clicked -->
+        </ul>
+    </div>
+
+    <div class="column" id="breach-details">
+        <h2>Breach Details</h2>
+        <div id="details">
+            <!-- The breach details will appear here when a breach is clicked -->
+            <p id="loading-message" style="display:none;">Loading breach details...</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
